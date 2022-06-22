@@ -1,4 +1,5 @@
 
+
 //Task Anonymous
 
  let oddNo = (function(a){
@@ -31,6 +32,19 @@
  })
  console.log(sum([1,2,3,4,5,6,7]))
 
+// is Prime
+
+let isPrime = function(a){
+    for(var i = 2 ; i*i < a; i++)
+        if(a%i==0)
+        return false;
+    return a > 1
+    }
+
+console.log(isPrime([12,2,3]))
+
+
+
 //palindromes Numbers
 
 let palindromes = (function(a){
@@ -45,11 +59,31 @@ let palindromes = (function(a){
 console.log(palindromes([1, 2, 3 , 4, 11, 22, 33, 99, 121]))
 
 // return duplicates
-median = [1,2,4,4,4,6,7]
-let result = median.filter(function(a,b){
+duplicates = [1,2,4,4,4,6,7]
+let result = duplicates.filter(function(a,b){
 
-    return b==median.indexOf(a)
+    return b==duplicates.indexOf(a)
     
 })
 console.log(result)
+
+// median of two sorted arrays
+let arr1 = [12,13,14,15,16,17]
+let arr2 = [9,8,7,6,5,4,3,2,1]
+let concatArr = arr1.concat(arr2)
+let Arr = (function(A){
+    for (var i = 1; i < A.length; i++)
+        for (var j = 0; j < i; j++)
+            if (A[i] < A[j]) {
+              var x = A[i];
+              A[i] = A[j];
+              A[j] = x;
+            }
+        return A
+    })
+    let resultsort = Arr(concatArr)
+    console.log(resultsort)
+    let sortarr = resultsort
+    let median = Math.floor(sortarr.length / 2)
+    console.log(median)
 
